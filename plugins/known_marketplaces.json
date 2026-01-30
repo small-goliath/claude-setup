@@ -1,0 +1,26 @@
+{
+  "claude-plugins-official": {
+    "source": {
+      "source": "github",
+      "repo": "anthropics/claude-plugins-official"
+    },
+    "installLocation": "/Users/iymaeng/.claude/plugins/marketplaces/claude-plugins-official",
+    "lastUpdated": "2026-01-29T09:47:03.660Z"
+  },
+  "claude-hud": {
+    "source": {
+      "source": "github",
+      "repo": "jarrodwatts/claude-hud"
+    },
+    "installLocation": "/Users/iymaeng/.claude/plugins/marketplaces/claude-hud",
+    "lastUpdated": "2026-01-27T04:19:42.282Z"
+  },
+  "team-attention-plugins": {
+    "source": {
+      "source": "github",
+      "repo": "team-attention/plugins-for-claude-natives"
+    },
+    "installLocation": "/Users/iymaeng/.claude/plugins/marketplaces/team-attention-plugins",
+    "lastUpdated": "2026-01-27T04:56:56.073Z"
+  }
+}
