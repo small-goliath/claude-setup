@@ -1,0 +1,85 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(./gradlew :core:test:*)",
+      "Bash(mvn test:*)",
+      "Bash(mvn clean install:*)",
+      "Bash(mvn install:*)",
+      "Bash(git checkout -b *)",
+      "Bash(git branch)",
+      "mcp__serena__list_dir",
+      "mcp__serena__activate_project",
+      "mcp__serena__get_current_config",
+      "mcp__playwright__playwright_navigate",
+      "mcp__playwright__playwright_close",
+      "Bash(npm install)",
+      "Bash(npx playwright install chromium)",
+      "Bash(npx playwright test:*)",
+      "mcp__playwright__playwright_get_visible_text",
+      "Bash(npm run test:e2e:*)",
+      "Bash(npm run test:report:*)",
+      "mcp__context7__sequentialthinking"
+    ]
+  },
+  "env": {
+    "GOOGLE_CHAT_WEBHOOK": "https://chat.googleapis.com/v1/spaces/AAQAhucGpfU/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=7pqveqhytr_jfsQTsQBDv0gTVE0iizHqqfuMJ4YT3HI",
+    "COMMIT_MESSAGE_FORMAT_PATH": "/build/convention/commit-message-format.md",
+    "PROJECT_FORMAT_PATH": "/build/convention/project-format.md",
+    "COMMIT_MESSAGE_CONVENTIONS_PATH": "/build/convention/commit-message-conventions.md",
+    "CHECKSTYLE_RULES_PATH": "/build/convention/checkstyle-rules.xml",
+    "FORMATTER_PATH": "/build/convention/intellij-formatter.xml",
+    "REDMINE_URL": "https://projects.rsupport.com"
+  },
+  "language": "korean",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/post-tool-use-notify.sh",
+            "timeout": 10,
+            "statusMessage": "파일 수정 알림 발송 중..."
+          }
+        ]
+      }
+    ],
+    "PermissionRequest": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/permission-request-notify.sh",
+            "timeout": 10,
+            "statusMessage": "권한 요청 알림 발송 중..."
+          }
+        ]
+      }
+    ],
+    "TaskCompleted": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/task-completed-validate.sh",
+            "timeout": 30,
+            "statusMessage": "Task 완료 검증 중..."
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/stop-notify.sh",
+            "timeout": 10,
+            "statusMessage": "완료 알림 발송 중..."
+          }
+        ]
+      }
+    ]
+  }
+}

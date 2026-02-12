@@ -1,0 +1,12 @@
+{
+  "name": "session-wrap",
+  "version": "1.0.0",
+  "description": "Session wrap-up workflow with multi-agent analysis pipeline for documentation, automation, learning, and follow-up suggestions",
+  "author": {
+    "name": "Team Attention",
+    "url": "https://github.com/team-attention"
+  },
+  "repository": "https://github.com/team-attention/plugins-for-claude-natives",
+  "license": "MIT",
+  "keywords": ["session", "wrap-up", "documentation", "automation", "multi-agent", "history-insight", "session-analyzer"]
+}
